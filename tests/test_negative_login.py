@@ -19,26 +19,3 @@ def test_not_valid_login_csenarios(page: Page, username: str, password: str, err
     expect(page.locator("[data-test=\"error\"]")).to_contain_text(
         "Epic sadface: Sorry, this user has been locked out.")
     expect(page).to_have_url("https://www.saucedemo.com/")
-#     page.wait_for_timeout(3000)
-#
-#     def test_locked_out_user_login(page: Page) -> None:
-#         page.goto("https://www.saucedemo.com/")
-#         page.locator("[data-test=\"username\"]").fill("locked_out_user")
-#         page.locator("[data-test=\"password\"]").fill("secret_sauce")
-#         page.locator("[data-test=\"login-button\"]").click()
-#         expect(page.locator("[data-test=\"error\"]")).to_be_visible()
-#         expect(page.locator("[data-test=\"error\"]")).to_contain_text(
-#             "Epic sadface: Sorry, this user has been locked out.")
-#         expect(page).to_have_url("https://www.saucedemo.com/")
-#         page.wait_for_timeout(3000)
-#
-#
-# def test_login_with_empty_credentials(page: Page) -> None:
-#     page.goto("https://www.saucedemo.com/")
-#     page.locator("[data-test=\"username\"]").fill("")
-#     page.locator("[data-test=\"password\"]").fill("")
-#     page.locator("[data-test=\"login-button\"]").click()
-#     expect(page.locator("[data-test=\"error\"]")).to_be_visible()
-#     expect(page.locator("[data-test=\"error\"]")).to_contain_text("Epic sadface: Username is required")
-#     expect(page).to_have_url("https://www.saucedemo.com/")
-#     page.wait_for_timeout(3000)
