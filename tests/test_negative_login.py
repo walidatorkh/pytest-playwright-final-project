@@ -10,7 +10,7 @@ testing_data = [
 
 
 @pytest.mark.parametrize("username, password, error_message", testing_data)
-def test_not_valid_login_csenarios(page: Page, username: str, password: str, error_message: str) -> None:
+def test_not_valid_login_scenarios(page: Page, username: str, password: str, error_message: str) -> None:
     page.goto("https://www.saucedemo.com/")
     page.locator("[data-test=\"username\"]").fill("locked_out_user")
     page.locator("[data-test=\"password\"]").fill("secret_sauce")
